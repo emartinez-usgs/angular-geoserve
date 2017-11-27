@@ -1,15 +1,5 @@
 <div class="geoserve">
-  <fieldset>
-    <legend>Location</legend>
-
-    <label for="latitude">Latitude</label>
-    <input #latitude type="number" value="34"/>
-
-    <label for="longitude">Longitude</label>
-    <input #longitude type="number" value="-118"/>
-
-    <button (click)="handleUpdateLocationClick(latitude.value, longitude.value)">Update Location</button>
-  </fieldset>
+  <app-place-search (search)="handleSearch($event)"></app-place-search>
 
   <ol *ngIf="places.length > 0">
     <li *ngFor="let place of places">

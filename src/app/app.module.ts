@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GeoserveComponent } from './geoserve/geoserve.component';
+import { PlaceSearchComponent } from './place-search/place-search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GeoserveComponent
+    GeoserveComponent,
+    PlaceSearchComponent
   ],
   imports: [
     BrowserModule

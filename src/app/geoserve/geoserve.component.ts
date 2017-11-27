@@ -13,10 +13,16 @@ export class GeoserveComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.handleUpdateLocationClick(34.0, -118.0);
+    this.handleSearch({
+      latitude: 34.0,
+      longitude: -118.0
+    });
   }
 
-  handleUpdateLocationClick (latitude: string, longitude: string) {
+  handleSearch (coordinates) {
+    const latitude: number = coordinates.latitude;
+    const longitude: number = coordinates.longitude;
+
     fetch(`${GEOSERVE_PLACES_ENDPOINT}?latitude=${latitude}&longitude=${longitude}&type=event`)
       .then((response) => {
         return response.json();
