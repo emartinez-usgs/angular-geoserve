@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Place } from '../place';
-
 const GEOSERVE_PLACES_ENDPOINT: string = 'https://earthquake.usgs.gov/ws/geoserve/places.json';
 
 @Component({

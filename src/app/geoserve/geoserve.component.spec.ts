@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GeoserveComponent } from './geoserve.component';
+import { PlaceSearchComponent } from '../place-search/place-search.component';
 
 describe('GeoserveComponent', () => {
   let component: GeoserveComponent;

@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./place-search.component.css']
 })
 export class PlaceSearchComponent implements OnInit {
-  @Output() search: EventEmitter<number, number> = new EventEmitter<number, number>();
+  @Output() search: EventEmitter<any> = new EventEmitter<any>();
 
   constructor () { }
 
