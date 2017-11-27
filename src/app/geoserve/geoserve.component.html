@@ -1,0 +1,23 @@
+<div class="geoserve">
+  <fieldset>
+    <legend>Location</legend>
+
+    <label for="latitude">Latitude</label>
+    <input #latitude type="number" value="34"/>
+
+    <label for="longitude">Longitude</label>
+    <input #longitude type="number" value="-118"/>
+
+    <button (click)="handleUpdateLocationClick(latitude.value, longitude.value)">Update Location</button>
+  </fieldset>
+
+  <ol *ngIf="places.length > 0">
+    <li *ngFor="let place of places">
+      {{formattedDistance(place)}}
+      {{formattedAzimuth(place)}} of
+      {{place.properties.name}},
+      {{place.properties.admin1_code}},
+      {{place.properties.country_code}}
+    </li>
+  </ol>
+</div>

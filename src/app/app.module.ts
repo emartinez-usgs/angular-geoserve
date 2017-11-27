@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { GeoserveComponent } from './geoserve/geoserve.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GeoserveComponent
   ],
   imports: [
     BrowserModule
