@@ -1,13 +1,11 @@
 <div class="geoserve">
   <app-place-search (search)="handleSearch($event)"></app-place-search>
 
-  <ol *ngIf="places.length > 0">
-    <li *ngFor="let place of places">
-      {{formattedDistance(place)}}
-      {{formattedAzimuth(place)}} of
-      {{place.properties.name}},
-      {{place.properties.admin1_code}},
-      {{place.properties.country_code}}
-    </li>
-  </ol>
+  <div *ngIf="places.length > 0">
+    <h2>Event Places</h2>
+    <ol *ngIf="places.length > 0">
+      <app-place-item *ngFor="let place of places" [place]="place">
+      </app-place-item>
+    </ol>
+  </div>
 </div>

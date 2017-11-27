@@ -8,10 +8,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class PlaceSearchComponent implements OnInit {
   @Output() search: EventEmitter<number, number> = new EventEmitter<number, number>();
 
-  constructor() { }
+  constructor () { }
 
-  ngOnInit() {
-  }
+  ngOnInit () { }
 
   handleUpdateLocationClick (latitude: string, longitude: string) {
     this.search.emit({

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Place } from '../place';
+
 const GEOSERVE_PLACES_ENDPOINT: string = 'https://earthquake.usgs.gov/ws/geoserve/places.json';
 
 @Component({
@@ -10,9 +12,9 @@ const GEOSERVE_PLACES_ENDPOINT: string = 'https://earthquake.usgs.gov/ws/geoserv
 export class GeoserveComponent implements OnInit {
   places: object[] = [];
 
-  constructor() { }
+  constructor () { }
 
-  ngOnInit() {
+  ngOnInit () {
     this.handleSearch({
       latitude: 34.0,
       longitude: -118.0
@@ -27,27 +29,8 @@ export class GeoserveComponent implements OnInit {
       .then((response) => {
         return response.json();
       }).then((json) => {
-        this.places = json.event.features;
+        this.places = json.event.features.slice(0);
       });
   }
-
-  formattedAzimuth (place) {
-    let fullwind = 22.5
-    let directions = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE',
-      'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
-    let azimuth = place.properties.azimuth
-
-    // if direction is already in compass points
-    if (directions.indexOf(azimuth) > -1) {
-      return azimuth
-    }
-
-    return directions[(Math.round((azimuth % 360) / fullwind))]
-  }
-
-  formattedDistance (place) {
-    return place.properties.distance + ' km'
-  }
-
 
 }
